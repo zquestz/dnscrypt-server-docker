@@ -58,6 +58,7 @@ server:
   chroot: "/opt/unbound/etc/unbound"
   directory: "/opt/unbound/etc/unbound"
   auto-trust-anchor-file: "var/root.key"
+  root-hints: "etc/opennic.cache"
   num-queries-per-thread: 4096
   outgoing-range: 8192
   msg-cache-size: @MSG_CACHE_SIZE@
@@ -91,8 +92,13 @@ mkdir -p /opt/unbound/etc/unbound/dev && \
 cp -a /dev/random /dev/urandom /opt/unbound/etc/unbound/dev/
 
 mkdir -p -m 700 /opt/unbound/etc/unbound/var && \
+mkdir -p -m 700 /opt/unbound/etc/unbound/etc && \
 chown _unbound:_unbound /opt/unbound/etc/unbound/var && \
 /opt/unbound/sbin/unbound-anchor -a /opt/unbound/etc/unbound/var/root.key
+
+dig . NS @75.127.96.89 > /opt/unbound/etc/unbound/etc/opennic.cache
+
+chown -R _unbound:_unbound /opt/unbound/etc/unbound/etc
 
 if [ ! -f /opt/unbound/etc/unbound/unbound_control.pem ]; then
   /opt/unbound/sbin/unbound-control-setup

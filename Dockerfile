@@ -41,6 +41,7 @@ RUN set -x && \
         libevent-dev \
         libexpat1 \
         libexpat1-dev \
+        dnsutils \
         --no-install-recommends && \
     mkdir -p /tmp/src && \
     cd /tmp/src && \
