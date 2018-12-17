@@ -24,7 +24,7 @@ spec:
         command: ["/entrypoint.sh", "start"]
         resources:
           requests:
-            memory: "1Gi"
+            memory: "64Mi"
       restartPolicy: Always
       volumes:
         - name: dnscrypt-keys
