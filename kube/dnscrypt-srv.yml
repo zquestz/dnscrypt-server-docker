@@ -12,6 +12,7 @@ spec:
     service: dnscrypt
   type: LoadBalancer
   loadBalancerIP: 34.70.243.74
+  externalTrafficPolicy: Local
 ---
 apiVersion: v1
 kind: Service
@@ -27,3 +28,4 @@ spec:
     service: dnscrypt
   type: LoadBalancer
   loadBalancerIP: 34.70.243.74
+  externalTrafficPolicy: Local

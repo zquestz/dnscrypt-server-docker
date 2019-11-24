@@ -60,7 +60,7 @@ RUN mkdir -p \
     /etc/service/unbound \
     /etc/service/watchdog
 
-COPY encrypted-dns.toml.in /opt/encrypted-dns/etc/
+COPY encrypted-dns.toml.in /opt/encrypted-dns/
 
 COPY entrypoint.sh /
 
@@ -71,7 +71,7 @@ COPY encrypted-dns.sh /etc/service/encrypted-dns/run
 
 COPY watchdog.sh /etc/service/watchdog/run
 
-VOLUME ["/opt/encrypted-dns/etc/keys"]
+VOLUME ["/opt/encrypted-dns/etc"]
 
 EXPOSE 443/udp 443/tcp 9100/tcp
 

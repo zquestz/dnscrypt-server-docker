@@ -14,6 +14,14 @@ CONF_DIR="/opt/encrypted-dns/etc"
 CONFIG_FILE="${CONF_DIR}/encrypted-dns.toml"
 CONFIG_FILE_TEMPLATE="${CONF_DIR}/encrypted-dns.toml.in"
 
+mkdir -p "${KEYS_DIR}"
+chown _encrypted-dns:_encrypted-dns "${KEYS_DIR}"
+mkdir -p "${STATE_DIR}"
+chown _encrypted-dns:_encrypted-dns "${STATE_DIR}"
+mkdir -p "${LISTS_DIR}"
+chown _encrypted-dns:_encrypted-dns "${LISTS_DIR}"
+cp /opt/encrypted-dns/encrypted-dns.toml.in ${CONFIG_FILE_TEMPLATE}
+
 init() {
     if [ "$(is_initialized)" = yes ]; then
         start

@@ -10,10 +10,11 @@ spec:
       containers:
       - name: dnscrypt-init
         image: zquestz/dnscrypt-server
+        imagePullPolicy: Always
         command: ["/entrypoint.sh", "init", "-A", "-N", "visionati.com", "-E", "34.70.243.74:443"]
         volumeMounts:
           - name: dnscrypt-keys
-            mountPath: /opt/encrypted-dns/etc/keys
+            mountPath: /opt/encrypted-dns/etc
       restartPolicy: Never
       volumes:
         - name: dnscrypt-keys
