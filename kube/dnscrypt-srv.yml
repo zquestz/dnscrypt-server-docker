@@ -11,7 +11,7 @@ spec:
   selector:
     service: dnscrypt
   type: LoadBalancer
-  loadBalancerIP: 104.154.149.207
+  loadBalancerIP: 34.70.243.74
 ---
 apiVersion: v1
 kind: Service
@@ -26,4 +26,4 @@ spec:
   selector:
     service: dnscrypt
   type: LoadBalancer
-  loadBalancerIP: 104.154.149.207
+  loadBalancerIP: 34.70.243.74

@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - env:
-        image: jedisct1/dnscrypt-server
+        image: zquestz/dnscrypt-server
+        imagePullPolicy: Always
         name: dnscrypt
         volumeMounts:
           - name: dnscrypt-keys
