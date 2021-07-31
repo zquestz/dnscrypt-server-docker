@@ -13,7 +13,7 @@ spec:
   selector:
     service: dnscrypt
   type: LoadBalancer
-  loadBalancerIP: 0.0.0.0
+  loadBalancerIP: 35.206.115.121
   externalTrafficPolicy: Local
 ---
 apiVersion: v1
@@ -31,5 +31,5 @@ spec:
   selector:
     service: dnscrypt
   type: LoadBalancer
-  loadBalancerIP: 0.0.0.0
+  loadBalancerIP: 35.206.115.121
   externalTrafficPolicy: Local

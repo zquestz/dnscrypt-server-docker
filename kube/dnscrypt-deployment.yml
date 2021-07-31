@@ -18,7 +18,7 @@ spec:
         service: dnscrypt
     spec:
       containers:
-      - image: zquestz/dnscrypt-server:latest
+      - image: jedisct1/dnscrypt-server:latest
         imagePullPolicy: Always
         name: dnscrypt
         ports:
