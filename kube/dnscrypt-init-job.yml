@@ -9,7 +9,7 @@ spec:
     spec:
       containers:
       - name: dnscrypt-init
-        image: zquestz/dnscrypt-server:latest
+        image: jedisct1/dnscrypt-server:latest
         imagePullPolicy: Always
         command: ["/entrypoint.sh", "init", "-A", "-M", "0.0.0.0:9100", "-N", "visionati.com", "-E", "35.206.115.121:5443"]
         volumeMounts:
